@@ -1,0 +1,230 @@
+//tiles.less
+
+.tile {
+	float: left;
+	background-color: #fff;
+	color: #828282;
+	.fluid-margin(6px, 1200px);
+	margin-left: 0;
+	margin-top: 0;
+
+	img {
+		max-width: 100%;
+	}
+
+	// Tile Size A - quarter width
+	&.tile-size-a {
+		position: relative;
+		.fluid-width((@grid-column-width*7) + (@grid-gutter-width*1.5), @region-a-inner-width);
+
+		&:before {
+			content: "";
+			display: block;
+			.fluid-padding-top(267px, 295px);
+		}
+
+		.tile-details {
+			.verticalCenter();
+			width: 100%;
+			text-align: center;
+
+			.weather {
+				.font-size(50px);
+
+				@media (min-width: @break-point-b) {
+					.font-size(70px);
+				}
+
+				@media (min-width: @break-point-c) {
+					.font-size(80px);
+				}
+
+				@media (min-width: @break-point-d) {
+					.font-size(120px);
+				}
+			}
+		}
+	}
+
+	// Tile Size B - half width
+	&.tile-size-b {
+		position: relative;
+		.fluid-width((@grid-column-width*14) + (@grid-gutter-width*3) + 7px, @region-a-inner-width);
+
+		&:before {
+			content: "";
+			display: block;
+			.fluid-padding-top(267px, 598px);
+		}
+
+		.tile-details {
+			.verticalCenter();
+			width: 100%;
+			text-align: center;
+
+			p {
+				.font-size(14px);
+				margin: 0;
+
+				@media (min-width: @break-point-b) {
+					.font-size(22px);
+				}
+				@media (min-width: @break-point-c) {
+					.font-size(26px);
+				}
+				@media (min-width: @break-point-d) {
+					.font-size(35px);
+				}
+
+
+				.countdown-days {
+					.font-size(25px);
+					font-family: @font-family-serif;
+					margin: 0;
+					font-style: italic;
+
+					@media (min-width: @break-point-b) {
+						.font-size(37px);
+					}
+					@media (min-width: @break-point-c) {
+						.font-size(55px);
+					}
+					@media (min-width: @break-point-d) {
+						.font-size(66px);
+					}
+				}
+			}
+		}
+	}
+
+	// Tile Size C - full width
+	&.tile-size-c {
+		position: relative;
+		.fluid-width(@region-a-width, @region-a-inner-width);
+
+		&:before {
+			content: "";
+			display: block;
+			.fluid-padding-top(267px, 1200px);
+		}
+
+		.tile-details {
+			.verticalCenter();
+			width: 100%;
+			text-align: center;
+
+			.tile-text {
+				margin: 0;
+				font-style: italic;
+				font-family: @font-family-serif;
+				.font-size(20px);
+				//.fluid-margin-left(120px, 1200px);
+				margin-left: 15%;
+
+				@media (min-width: @break-point-b) {
+					.font-size(30px);
+				}
+
+				@media (min-width: @break-point-c) {
+					.font-size(35px);
+				}
+
+				@media (min-width: @break-point-d) {
+					.font-size(50px);
+				}
+
+				@media (min-width: @break-point-e) {
+					.font-size(60px);
+				}
+			}
+
+			.icon {
+				.verticalCenter();
+				left: 8%;
+				.font-size(30px);
+
+				@media (min-width: @break-point-b) {
+					.font-size(60px);
+				}
+
+				@media (min-width: @break-point-c) {
+					.font-size(100px);
+				}
+
+				@media (min-width: @break-point-d) {
+					.font-size(120px);
+				}
+
+				@media (min-width: @break-point-e) {
+					.font-size(140px);
+				}
+			}
+		}
+	}
+
+	// Tile Size D - half width - image determines height
+	&.tile-size-d {
+		position: relative;
+		.fluid-width((@grid-column-width*14) + (@grid-gutter-width*3) + 7px, @region-a-inner-width);
+
+		.tile-details {
+			width: 100%;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			.rgba-bg(#000, 0.7);
+			.fluid-padding(@grid-gutter-width/2, 154px); // measurements from psd
+			color: #fff;
+			font-family: @font-family-serif;
+			font-style: italic;
+
+			.tile-details-title {
+				margin: 0;
+				.font-size(20px);
+
+				@media (min-width: @break-point-d) {
+					.font-size(30px);
+				}
+			}
+		}
+
+		.tile-image {
+			img {
+				display: block;
+			}
+		}
+	}
+}
+
+.countdown-container-style-a {
+	float: left;
+	width: 50%;
+
+	p {
+		.font-size(37px);
+		font-family: @font-family-serif;
+		margin: 0;
+		font-style: italic;
+
+		@media (min-width: @break-point-b) {
+			.font-size(55px);
+		}
+	}
+}
+
+.countdown-container-style-b {
+	float: left;
+	width: 35%;
+	.margin-left(5px);
+	.margin-top(10px);
+
+	p {
+		.font-size(14px);
+		margin: 0;
+
+		@media (min-width: @break-point-b) {
+			.font-size(25px);
+		}
+	}
+}

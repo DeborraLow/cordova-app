@@ -1,0 +1,69 @@
+// custom project mixins
+
+.force-hardware-acceleration() {
+	-webkit-backface-visibility: hidden;
+	-webkit-perspective: 1000;
+	-webkit-transform: translateZ(0);
+}
+
+.verticalCenterOff() {
+	position: static;
+	top: 0;
+	.translateY(0);
+}
+.verticalCenterParent() {
+	position: relative;
+
+	.ie8 & {
+		display: table;
+		height: 100%;
+	}
+}
+.verticalCenter() {
+	position: absolute;
+	top: 50%;
+	.translateY(-50%);
+
+	.ie8 & {
+		display: table-cell;
+		position: static;
+		vertical-align: middle;
+	}
+}
+
+.horizontalCenter() {
+	position: absolute;
+	left: 50%;
+	.translateX(-50%);
+
+	.ie8 & {
+		display: table-cell;
+		position: static;
+		vertical-align: middle;
+	}
+}
+.horizontalCenterOff() {
+	position: static;
+	left: 0;
+	.translateX(0);
+}
+
+.absoluteCenter() {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	.translate(-50%, -50%);
+
+	.ie8 & {
+		display: table-cell;
+		position: static;
+		vertical-align: middle;
+	}
+}
+
+.absoluteCenterOff() {
+	position: static;
+	left: 0;
+	top: 0;
+	.translate(0, 0);
+}

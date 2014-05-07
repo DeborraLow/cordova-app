@@ -1,0 +1,25 @@
+---
+component: tile
+title: Tile style d - image and text
+url: '#'
+body: Dummy text. Sed posuere consectetur est at lobortis.
+urlText: Read More
+---
+<article class="tile {{#if class}}{{class}}{{/if}}">
+	{{#if url}}
+		<a href="{{url}}">
+	{{/if}}
+		{{#if image}}
+			<div class="tile-image">
+				<img alt="{{#if altText}}{{altText}}{{/if}}" src="{{image}}">
+			</div>
+		{{/if}}
+		<div class="tile-details">
+			{{#if title}}
+				<h2 class="tile-details-title">{{title}}</h2>
+			{{/if}}
+		</div>
+	{{#if url}}
+		</a>
+	{{/if}}
+</article>

@@ -1,0 +1,173 @@
+// Lists
+
+ul {
+	list-style: none;
+	.margin(@vertical-rhythm*4, 0, @vertical-rhythm*4, @grid-gutter-width);
+	padding: 0;
+
+	.html-rtl & {
+		.margin(@vertical-rhythm*4, @grid-gutter-width, @vertical-rhythm*4, 0);
+	}
+
+	ul,
+	ol {
+		margin-bottom: 0;
+		.margin-top(@vertical-rhythm*2);
+	}
+
+	li {
+		position: relative;
+		.margin-bottom(@vertical-rhythm*2);
+
+		&:before {
+			background-color: @brand-color-a;
+			content: " ";
+			position: absolute;
+			.top(8px);
+			.left(-16px);
+			.height(@vertical-rhythm);
+			.width(@vertical-rhythm);
+			border-radius: 100%;
+
+			.html-rtl & {
+				.right(-16px);
+				left: auto;
+			}
+		}
+	}
+}
+
+
+ol {
+	counter-reset: li;
+	padding: 0;
+	.margin(@vertical-rhythm*4, 0, @vertical-rhythm*4, 25px);
+
+	.html-rtl & {
+		.margin(@vertical-rhythm*4, 25px, @vertical-rhythm*4, 0);
+	}
+
+	ul,
+	ol {
+		margin-bottom: 0;
+		.margin-top(@vertical-rhythm*2);
+	}
+
+	li {
+		counter-increment: li;
+		list-style-type: none;
+		.margin-bottom(@vertical-rhythm*2);
+		position: relative;
+
+		&:before {
+			color: @brand-color-a;
+			content: counter(li) ".";
+			position: absolute;
+			left: -2.6em;
+			width: 2em;
+			text-align: right;
+
+			.html-rtl & {
+				right: -2.6em;
+				left: auto;
+				text-align: left;
+			}
+		}
+	}
+
+	// Deep nesting
+	//
+	// ol li:before {
+	// 	content: counter(li,lower-alpha) ".";
+	// }
+	// ol ol li:before {
+	// 	content: counter(li,lower-roman) ".";
+	// }
+
+}
+
+.list-unstyled {
+	margin-left: 0;
+	margin-top: 0;
+
+	> li {
+		list-style: none;
+		.margin-bottom(@vertical-rhythm);
+
+		&:before {
+			content: '';
+			display: none;
+		}
+	}
+}
+
+.list-inline {
+	.list-unstyled();
+
+	> li {
+		.display-inlineblock();
+		.padding(0, 3px, @vertical-rhythm);
+	}
+}
+
+dl {
+	.margin-bottom(@vertical-rhythm*4);
+}
+
+dt,
+dd {
+	.line-height(@line-height-base);
+}
+
+dt {
+	text-transform: capitalize;
+	font-family: @font-family-base-bold;
+	font-weight: @font-weight-bold;
+	.font-size(@font-size-small);
+	.margin-bottom(@vertical-rhythm);
+}
+
+dd {
+	.margin-bottom(@vertical-rhythm*2);
+}
+
+dd + dt {
+}
+
+// Horizontal layout (like forms)
+.dl-horizontal {
+	.clearfix();
+
+	@media (min-width: @break-point-d) {
+
+		dt {
+			float: left;
+			.width(175px);
+			clear: left;
+			text-align: right;
+		}
+
+		dd {
+			.margin-left(195px);
+		}
+	}
+}
+
+.dl-inline {
+	overflow: hidden;
+	display: block;
+
+	@media (min-width: @break-point-d) {
+
+		dt {
+			display: inline-block;
+			margin: 0;
+			padding: 0;
+		}
+
+		dd {
+			display: inline-block;
+			margin: 0;
+		}
+	}
+}

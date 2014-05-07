@@ -1,0 +1,21 @@
+---
+component: tile
+title: Tile Size A - just icon
+url: '#'
+body: Dummy text. Sed posuere consectetur est at lobortis.
+urlText: Read More
+---
+<article class="tile {{#if class}}{{class}}{{/if}}">
+	{{#if title}}
+	<header class="tile-header">
+		<h2 class="visually-hidden">
+			{{title}}
+		</h2>
+	</header>
+	{{/if}}
+	{{#if icon}}
+	<div class="tile-details">
+		<i class="weather {{icon}}"></i>
+	</div>
+	{{/if}}
+</article>

@@ -1,0 +1,30 @@
+---
+component: tile
+title: Tile Size B
+url: '#'
+body: Dummy text. Sed posuere consectetur est at lobortis.
+urlText: Read More
+---
+<article class="tile {{#if class}}{{class}}{{/if}}">
+	{{#if title}}
+	<header class="tile-header">
+		<h2 class="visually-hidden">
+		{{#if url}}<a href="{{url}}">{{/if}}
+			{{title}}
+		{{#if url}}</a>{{/if}}
+		</h2>
+	</header>
+	{{/if}}
+	<div class="tile-details">
+		<p>
+		{{#if countdown-time}}
+			<span class="countdown-days">
+				{{{countdown-time}}}
+			</span>
+		{{/if}}
+		{{#if countdown-text}}
+			{{{countdown-text}}}
+		{{/if}}
+		</p>
+	</div>
+</article>

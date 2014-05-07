@@ -1,0 +1,26 @@
+---
+component: tile
+title: Tile Size C - icon and text
+url: '#'
+body: Dummy text. Sed posuere consectetur est at lobortis.
+urlText: Read More
+---
+<article class="tile {{#if class}}{{class}}{{/if}}">
+	{{#if title}}
+	<header class="tile-header">
+		<h2 class="visually-hidden">
+			{{title}}
+		</h2>
+	</header>
+	{{/if}}
+	<div class="tile-details">
+		{{#if body}}
+			<p>
+				{{#if icon}}
+					<i class="icon {{icon}}"></i>
+				{{/if}}
+				<span class="tile-text">{{body}}</span>
+			</p>
+		{{/if}}
+	</div>
+</article>

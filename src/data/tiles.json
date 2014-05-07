@@ -1,0 +1,62 @@
+{
+	"tileStyleA": {
+		"class": "tile-size-a tile-type-a",
+		"title": "Tile Title (.tile-size-a .tile-type-a)",
+		"body": "",
+		"icon": "weather-03d",
+		"countdown-time": "",
+		"countdown-text": "",
+		"url": "#",
+		"urlText": "",
+		"image": "",
+		"altText": "image"
+	},
+	"tileStyleB": {
+		"class": "tile-size-b tile-type-a",
+		"title": "Tile Title (.tile-size-b .tile-type-a)",
+		"body": "",
+		"icon": "",
+		"countdown-time": "134",
+		"countdown-text": "Days to go!",
+		"url": "#",
+		"urlText": "",
+		"image": "",
+		"altText": "image"
+	},
+	"tileStyleC": {
+		"class": "tile-size-c tile-type-a",
+		"title": "Tile Title (.tile-size-b .tile-type-a)",
+		"body": "Your holiday checklist",
+		"icon": "icon-ok",
+		"countdown-time": "",
+		"countdown-text": "",
+		"url": "#",
+		"urlText": "",
+		"image": "",
+		"altText": "image"
+	},
+	"tileStyleDDining": {
+		"class": "tile-size-d tile-type-b",
+		"title": "Dining",
+		"body": "",
+		"icon": "",
+		"countdown-time": "",
+		"countdown-text": "",
+		"url": "#",
+		"urlText": "",
+		"image": "images/image-tile-dining.jpeg",
+		"altText": "image"
+	},
+	"tileStyleDActivity": {
+		"class": "tile-size-d tile-type-b",
+		"title": "Activities",
+		"body": "",
+		"icon": "",
+		"countdown-time": "",
+		"countdown-text": "",
+		"url": "#",
+		"urlText": "",
+		"image": "http://lorempixel.com/598/542/abstract/",
+		"altText": "image"
+	}
+}

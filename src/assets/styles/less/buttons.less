@@ -1,0 +1,147 @@
+// buttons.less
+
+// Button variants
+// -------------------------
+.button-variant(@color; @background; @border) {
+	color: @color;
+	background-color: @background;
+	border-color: @border;
+	&:hover,
+	&:focus,
+	&:active,
+	&.active {
+		background-color: darken(@background, 8%);
+		border-color: darken(@border, 12%);
+		color: @color;
+	}
+	&:active,
+	&.active {
+		background-image: none;
+	}
+}
+
+// Button sizes
+// -------------------------
+.button-size(@padding-vertical; @padding-horizontal; @font-size; @line-height; @border-radius) {
+	.border-radius(@border-radius);
+	.padding(@padding-vertical, @padding-horizontal);
+	.font-size(@font-size);
+	.line-height(@line-height);
+}
+
+// Button variants
+// -------------------------
+.button-base(@color; @background; @border) {
+	color: @color;
+	background-color: @background;
+	border-color: @border;
+}
+.button-hover(@color; @background; @border) {
+	&:hover,
+	&:focus,
+	&:active {
+		background-color: @background;
+		border-color: @border;
+		color: @color;
+	}
+}
+
+.button-base-rgba(@color; @background; @alpha; @border) {
+	color: @color;
+	.rgba-bg(@background, @alpha);
+	border: @border;
+}
+.button-hover-rgba(@color; @background; @alpha; @border) {
+	&:hover,
+	&:focus,
+	&:active {
+		color: @color;
+		.rgba-bg(@background, @alpha);
+		border: @border;
+	}
+}
+
+.btn {
+	background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+	border: 1px solid transparent;
+	cursor: pointer;
+	display: inline-block;
+	font-weight: 400;
+	margin-bottom: 0; // For input.btn
+	.margin-bottom(@vertical-rhythm);
+	text-align: center;
+	text-transform: uppercase;
+	vertical-align: middle;
+	.button-size(6px; 24px; 14px; @line-height-base; 100px);
+	.user-select(none);
+	letter-spacing: 1px;
+
+	&:focus {
+		.tab-focus();
+		outline: 0;
+	}
+
+	&:hover,
+	&:focus {
+		text-decoration: none;
+	}
+
+	&:active,
+	&.active {
+		outline: 0;
+		background-image: none;
+	}
+
+	&.disabled,
+	&[disabled],
+	fieldset[disabled] & {
+		cursor: not-allowed;
+		pointer-events: none; // Future-proof disabling of clicks
+		.opacity(65);
+	}
+}
+
+// Button sizes
+.btn-large {
+	.button-size(12px; 48px; 28px; @line-height-base; 100px);
+}
+.btn-small {
+	.button-size(6px; 12px; @font-size-small; @line-height-small; 100px);
+}
+
+// Default button
+.btn {
+	.button-base(@brand-color-a; transparent; @brand-color-a);
+	.button-hover(#FFF; @brand-color-a; @brand-color-a);
+}
+.btn-primary {
+	.button-variant(#FFF; @brand-color-a; @brand-color-a);
+}
+.btn-secondary {
+	.button-base(#fff; transparent; #fff);
+	.button-hover(#fff; transparent; @brand-color-a);
+
+	&:hover {
+		.box-shadow(0 1px 1px 0 @brand-color-b);
+	}
+}
+.btn-alt {
+	.button-variant(@brand-color-g; #FFF; @brand-color-g);
+}
+.btn-style-a {
+	.button-base(#FFF; @brand-color-a; @brand-color-a);
+	.button-hover(#FFF; transparent; #FFF);
+}
+.btn-style-b {
+	.button-base(#333; transparent; #333);
+	.button-hover(@brand-color-a; transparent; @brand-color-a);
+}
+.btn-style-c {
+	.button-base(@brand-color-a; #fff; #fff);
+	.button-hover(#fff; @brand-color-a; @brand-color-a);
+}
+.btn-style-d {
+	.button-base-rgba(#fff; @brand-color-b; 0.7; none);
+	.button-hover-rgba(#fff; @brand-color-a; 1; none);
+}
+
